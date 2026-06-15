@@ -201,23 +201,6 @@ The fixed handler (Step 8) already includes these variables.
 
 ---
 
-## 🔄 Autostart (optional)
-
-To start AppController automatically on boot:
-
-```bash
-mkdir -p ~/.config/autostart
-cp /usr/share/applications/appcontroller.desktop ~/.config/autostart/
-```
-
-To remove from autostart:
-
-```bash
-rm ~/.config/autostart/appcontroller.desktop
-```
-
----
-
 ## 📁 Required files
 
 | File | Size | Source |

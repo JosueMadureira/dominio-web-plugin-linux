@@ -201,23 +201,6 @@ O handler corrigido (Passo 8) já inclui estas variáveis.
 
 ---
 
-## 🔄 Autostart (opcional)
-
-Para iniciar o AppController automaticamente ao ligar o PC:
-
-```bash
-mkdir -p ~/.config/autostart
-cp /usr/share/applications/appcontroller.desktop ~/.config/autostart/
-```
-
-Para remover do autostart:
-
-```bash
-rm ~/.config/autostart/appcontroller.desktop
-```
-
----
-
 ## 📁 Arquivos necessários
 
 | Arquivo | Tamanho | Origem |
