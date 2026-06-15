@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domínio Web (Thonsons Routers) — Linux</title>
+  <meta name="description" content="Guia completo de instalação do Domínio Web Plugin no Ubuntu 24.04, 25.04 e 26.04 LTS">
+  <meta name="keywords" content="dominio web, thonsons routers, trcomputerplugin, appcontroller, gg-client, ubuntu, linux, plugin">
+  <meta property="og:title" content="Domínio Web (Thonsons Routers) — Linux">
+  <meta property="og:description" content="Guia completo de instalação do Domínio Web Plugin no Ubuntu">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .header { text-align: center; margin-bottom: 48px; }
+    .header h1 {
+      font-size: 2.2em;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .header p { color: #8b949e; font-size: 1.1em; }
+    .header .badges { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 500;
+    }
+    .badge-ubuntu { background: #e95420; color: #fff; }
+    .badge-success { background: #2ea043; color: #fff; }
+    .badge-arch { background: #1f6feb; color: #fff; }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card h2 { font-size: 1.3em; margin-bottom: 16px; color: #58a6ff; }
+    .card p, .card li { color: #c9d1d9; }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 8px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: #2ea043; color: #fff; }
+    .btn-secondary { background: #1f6feb; color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid #30363d; color: #c9d1d9; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #30363d; }
+    th { color: #8b949e; font-weight: 500; font-size: 0.9em; text-transform: uppercase; }
+    td { color: #c9d1d9; }
+    a { color: #58a6ff; }
+    .footer { text-align: center; color: #484f58; font-size: 0.9em; margin-top: 48px; padding-top: 24px; border-top: 1px solid #30363d; }
+    @media (max-width: 600px) { .header h1 { font-size: 1.6em; } .container { padding: 20px 16px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badges">
+        <span class="badge badge-ubuntu">Ubuntu 26.04</span>
+        <span class="badge badge-ubuntu">Ubuntu 25.04</span>
+        <span class="badge badge-ubuntu">Ubuntu 24.04</span>
+        <span class="badge badge-success">Funcional</span>
+        <span class="badge badge-arch">amd64 / i386</span>
+      </div>
+      <h1>🕸️ Domínio Web <span style="color:#8b949e;font-weight:300;">(</span>Thonsons Routers<span style="color:#8b949e;font-weight:300;">)</span></h1>
+      <p>Guia completo de instalação para Ubuntu 24.04, 25.04 e 26.04 LTS</p>
+    </div>
+
+    <div class="card">
+      <h2>📌 Sobre</h2>
+      <p>Este guia ensina a instalar o <strong>Domínio Web Plugin</strong> (Thonsons Routers) em distribuições Ubuntu modernas (24.04+), fazendo o AppController e o TRComputerPluginLinux funcionarem corretamente.</p>
+    </div>
+
+    <div class="card">
+      <h2>📥 Download dos Arquivos</h2>
+      <table>
+        <tr><th>Arquivo</th><th>Tamanho</th><th>Origem</th></tr>
+        <tr><td><code>gg-client-linux.deb</code></td><td>~10 MB</td><td><a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=7165" target="_blank">Central de Soluções</a></td></tr>
+        <tr><td><code>DominioWebPlugin.7z</code></td><td>~22 MB</td><td><a href="https://suporte.dominioatendimento.com/central/faces/solucao.html?codigo=7165" target="_blank">Central de Soluções</a></td></tr>
+      </table>
+      <p style="margin-top:12px;color:#8b949e;font-size:0.9em;">💡 Coloque os dois arquivos em <code>~/Downloads/</code> antes de executar o script.</p>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Instalação Automática</h2>
+      <p>Baixe e execute o script de instalação:</p>
+      <pre style="background:#0d1117;padding:16px;border-radius:8px;margin-top:12px;overflow-x:auto;color:#8b949e;"><code style="font-family: 'JetBrains Mono', 'Fira Code', monospace;">wget -O install-dominio-web.sh https://raw.githubusercontent.com/JosueMadureira/dominio-web-plugin-linux/main/install.sh
+chmod +x install-dominio-web.sh
+./install-dominio-web.sh</code></pre>
+      <p style="margin-top:12px;color:#8b949e;font-size:0.9em;">🛡️ O script resolve todas as dependências automaticamente.</p>
+    </div>
+
+    <div class="buttons">
+      <a href="https://github.com/JosueMadureira/dominio-web-plugin-linux" class="btn btn-primary" target="_blank">📖 Ver Tutorial Completo</a>
+      <a href="https://github.com/JosueMadureira/dominio-web-plugin-linux/blob/main/README.md" class="btn btn-secondary" target="_blank">🇧🇷 Ler em Português</a>
+      <a href="https://github.com/JosueMadureira/dominio-web-plugin-linux/blob/main/README-EN.md" class="btn btn-outline" target="_blank">🇺🇸 Read in English</a>
+    </div>
+
+    <div class="footer">
+      <p>MIT © 2026 Josué Madureira</p>
+      <p style="margin-top:4px;"><a href="https://github.com/JosueMadureira/dominio-web-plugin-linux">github.com/JosueMadureira/dominio-web-plugin-linux</a></p>
+    </div>
+  </div>
+</body>
+</html>
